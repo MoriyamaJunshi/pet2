@@ -1,5 +1,6 @@
 package com.example.pet2.service;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -10,8 +11,8 @@ import com.example.pet2.model.Pet;
 @Service
 public class PetService {
 
-	private List<Pet> allPets = Arrays.asList(
-			new Pet(null, null, "10001", null, null, null));
+	private List<Pet> allPets = new ArrayList<>(Arrays.asList(
+			new Pet(null, null, "10001", null, null, null)));
 	
 	public List<Pet> getAllPets(){
 		return allPets;
@@ -24,5 +25,9 @@ public class PetService {
 			}
 		}			
 		return null;
+	}
+	
+	public void addPet (Pet pet) {
+		allPets.add(pet);
 	}
 }
