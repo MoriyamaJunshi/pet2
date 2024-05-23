@@ -30,4 +30,11 @@ public class PetService {
 	public void addPet (Pet pet) {
 		allPets.add(pet);
 	}
+	
+	public void updateAllPets(Pet updatedPet) {
+	    for (int i = 0; i < allPets.size(); i++) {
+	        allPets.set(i, updatedPet);
+	    }
+	}
+
 }
