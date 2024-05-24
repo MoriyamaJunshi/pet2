@@ -5,7 +5,16 @@ import java.util.Locale.Category;
 
 import javax.swing.text.html.HTML.Tag;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity(name="m_pet")
 public class Pet {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Category category;
     private String name;
@@ -62,6 +71,4 @@ public class Pet {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-
-
 }

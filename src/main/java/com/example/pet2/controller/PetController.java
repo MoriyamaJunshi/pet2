@@ -1,6 +1,7 @@
 package com.example.pet2.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -28,7 +29,7 @@ public class PetController {
 	}
 	
 	@GetMapping("/{petId}")
-	public Pet getPet(@PathVariable("petId") String petId) {
+	public Optional getPet(@PathVariable("petId") Long petId) {
 		return petService.getPetId(petId);
 	}
 	
