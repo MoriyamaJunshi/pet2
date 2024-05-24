@@ -40,6 +40,13 @@ public class PetService {
 	public void deletePet(Long petId) {
 	    allPets.removeIf(i -> i.getId().equals(petId));
 	}
-
-
+	
+	public void updatePet(Long PetId, Pet pet) {
+		for(int i=0; i<allPets.size(); i++) {
+			if(allPets.get(i).getId() != null && allPets.get(i).getId().equals(PetId)) {
+				allPets.set(i, pet);
+				return;
+			}
+		}			
+	}
 }
