@@ -1,15 +1,12 @@
 package com.example.pet2.repo;
 
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.example.pet2.model.Pet;
 
-@Repository
-public interface PetRepository extends CrudRepository<Pet, Long> {
-//CrudRepository で使用できるメソッド
-//	save
-//	findById(id)
-//	findAll
-//	deleteById(id)
+public interface PetRepository extends JpaRepository<Pet, Long> {
+    List<Pet> findByStatus(String status);
+    List<Pet> findByTags_Name(String tagName);
 }
